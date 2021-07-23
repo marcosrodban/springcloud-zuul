@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: zuul-server
+#  profiles:
+#    active: 01-dev
+  cloud:
+    config:
+      uri: http://localhost:8889
+      failFast: true

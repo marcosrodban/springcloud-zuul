@@ -1,0 +1,3 @@
+org\sanidadmadrid\cloud\zuul\filters\CustomZuulFilter.class
+org\sanidadmadrid\cloud\zuul\ZuulServerApplication.class
+org\sanidadmadrid\cloud\zuul\config\ZuulConfiguration.class
