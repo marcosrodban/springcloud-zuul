@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+ zuulserver:
+  image: zuulserver:v1
+  container_name: zuulserver
+  build: .
+  ports:
+   - "9004:8899"
+
+#creamos un volumen de tipo host
+  volumes:
+   - /home/neo/temp/docker/var/apps/zuulserver/conf:/conf

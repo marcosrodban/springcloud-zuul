@@ -1,0 +1,47 @@
+
+#este fichero es el que guardara en el servidor de configuracion
+spring:
+  application:
+    name: zuul-server
+config:
+  key: dev
+
+server:
+  port: 8899
+
+
+#zuul:
+  #routes:
+    #users:
+      #path: /myusers/**
+      #serviceId: users_service
+
+#Zuul Configuration Properties
+zuul:
+  routes:
+      restservice:
+        path: /restfulapp/**
+        serviceId: restfulapp
+      restservice2:
+        path: /restfulapp2/**
+        url: http://192.168.1.126:10001
+      restservice3:
+        path: /restfulapp3/**
+        url: http://192.168.1.126:10001
+
+
+eureka:
+  client:
+    #telling the server to register himself in the service registry of the other servers
+    instance-info-replication-interval-seconds: 10
+    registry-fetch-interval-seconds: 10
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://192.168.1.126:9002/eureka,http://192.168.1.126:9003/eureka
+    healthcheck:
+      enabled: true
+  instance:
+      preferIpAddress: true
+      lease-renewal-interval-in-seconds: 30
+      lease-expiration-duration-in-seconds: 30

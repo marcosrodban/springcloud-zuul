@@ -1,0 +1,26 @@
+config:
+  key: dev
+
+#Application Name
+spring:
+  application:
+    name: zuul-server
+
+server:
+  port: 8899
+
+eureka:
+  client:
+    #telling the server to register himself in the service registry of the other servers
+    instance-info-replication-interval-seconds: 10
+    registry-fetch-interval-seconds: 10
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://ESLGVH4N32.ste.dom:8761/eureka,http://ESLGVH4N32.ste.dom:8762/eureka
+    healthcheck:
+      enabled: true
+  instance:
+      preferIpAddress: true
+      lease-renewal-interval-in-seconds: 30
+      lease-expiration-duration-in-seconds: 30
